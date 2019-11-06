@@ -1,4 +1,5 @@
 package Base;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -8,7 +9,7 @@ import org.testng.annotations.BeforeTest;
 public class BaseClass {
 
 	public WebDriver driver; 
-	private String baseUrl = "https://www.amazon.co.uk/";
+	private String baseUrl = "http://the-internet.herokuapp.com/";
 	
 	@BeforeTest
 	public void driverSetup() {
@@ -34,5 +35,10 @@ public class BaseClass {
 		
 	}
 	
+	public void clickLinkByName(String link) {
+		
+		driver.findElement(By.linkText(link)).click();
+		
+	}
 	
 }
